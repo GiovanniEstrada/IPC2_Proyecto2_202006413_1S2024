@@ -1,0 +1,338 @@
+digraph G {
+	edge [style=invis]
+	rankdir=LR
+	node [shape=box style=filled]
+	subgraph matriz_laberinto {
+		109 [label="" fillcolor=black fontcolor=white]
+		108 [label="" fillcolor=black fontcolor=white]
+		108 -> 108 [style=invis]
+		107 [label="" fillcolor=black fontcolor=white]
+		107 -> 107 [style=invis]
+		106 [label="" fillcolor=black fontcolor=white]
+		106 -> 106 [style=invis]
+		105 [label="" fillcolor=black fontcolor=white]
+		105 -> 105 [style=invis]
+		104 [label="" fillcolor=black fontcolor=white]
+		104 -> 104 [style=invis]
+		103 [label="" fillcolor=black fontcolor=white]
+		103 -> 103 [style=invis]
+		102 [label="" fillcolor=black fontcolor=white]
+		102 -> 102 [style=invis]
+		101 [label="" fillcolor=black fontcolor=white]
+		101 -> 101 [style=invis]
+		99 [label="" fillcolor=white]
+		99 -> 99 [style=invis]
+		98 [label="" fillcolor=white]
+		98 -> 98 [style=invis]
+		98 -> 98 [style=invis]
+		97 [label="" fillcolor=white]
+		97 -> 97 [style=invis]
+		97 -> 97 [style=invis]
+		96 [label="" fillcolor=white]
+		96 -> 96 [style=invis]
+		96 -> 96 [style=invis]
+		95 [label="" fillcolor=black fontcolor=white]
+		95 -> 95 [style=invis]
+		95 -> 95 [style=invis]
+		94 [label="" fillcolor=white]
+		94 -> 94 [style=invis]
+		94 -> 94 [style=invis]
+		93 [label="" fillcolor=white]
+		93 -> 93 [style=invis]
+		93 -> 93 [style=invis]
+		92 [label="" fillcolor=white]
+		92 -> 92 [style=invis]
+		92 -> 92 [style=invis]
+		91 [label="" fillcolor=white]
+		91 -> 91 [style=invis]
+		91 -> 91 [style=invis]
+		89 [label="" fillcolor=black fontcolor=white]
+		89 -> 89 [style=invis]
+		88 [label="" fillcolor=black fontcolor=white]
+		88 -> 88 [style=invis]
+		88 -> 88 [style=invis]
+		87 [label="" fillcolor=black fontcolor=white]
+		87 -> 87 [style=invis]
+		87 -> 87 [style=invis]
+		86 [label="" fillcolor=black fontcolor=white]
+		86 -> 86 [style=invis]
+		86 -> 86 [style=invis]
+		85 [label="" fillcolor=white]
+		85 -> 85 [style=invis]
+		85 -> 85 [style=invis]
+		84 [label="" fillcolor=white]
+		84 -> 84 [style=invis]
+		84 -> 84 [style=invis]
+		83 [label="" fillcolor=white]
+		83 -> 83 [style=invis]
+		83 -> 83 [style=invis]
+		82 [label="" fillcolor=white]
+		82 -> 82 [style=invis]
+		82 -> 82 [style=invis]
+		81 [label="" fillcolor=white]
+		81 -> 81 [style=invis]
+		81 -> 81 [style=invis]
+		79 [label="" fillcolor=white]
+		79 -> 79 [style=invis]
+		78 [label="" fillcolor=white]
+		78 -> 78 [style=invis]
+		78 -> 78 [style=invis]
+		77 [label="" fillcolor=green]
+		77 -> 77 [style=invis]
+		77 -> 77 [style=invis]
+		76 [label="" fillcolor=green]
+		76 -> 76 [style=invis]
+		76 -> 76 [style=invis]
+		75 [label=" B " fillcolor=green]
+		75 -> 75 [style=invis]
+		75 -> 75 [style=invis]
+		74 [label="" fillcolor=black fontcolor=white]
+		74 -> 74 [style=invis]
+		74 -> 74 [style=invis]
+		73 [label="" fillcolor=white]
+		73 -> 73 [style=invis]
+		73 -> 73 [style=invis]
+		72 [label="" fillcolor=white]
+		72 -> 72 [style=invis]
+		72 -> 72 [style=invis]
+		71 [label="" fillcolor=white]
+		71 -> 71 [style=invis]
+		71 -> 71 [style=invis]
+		69 [label="" fillcolor=green]
+		69 -> 69 [style=invis]
+		68 [label="" fillcolor=green]
+		68 -> 68 [style=invis]
+		68 -> 68 [style=invis]
+		67 [label="" fillcolor=green]
+		67 -> 67 [style=invis]
+		67 -> 67 [style=invis]
+		66 [label="" fillcolor=black fontcolor=white]
+		66 -> 66 [style=invis]
+		66 -> 66 [style=invis]
+		65 [label="" fillcolor=black fontcolor=white]
+		65 -> 65 [style=invis]
+		65 -> 65 [style=invis]
+		64 [label="" fillcolor=black fontcolor=white]
+		64 -> 64 [style=invis]
+		64 -> 64 [style=invis]
+		63 [label="" fillcolor=white]
+		63 -> 63 [style=invis]
+		63 -> 63 [style=invis]
+		62 [label="" fillcolor=white]
+		62 -> 62 [style=invis]
+		62 -> 62 [style=invis]
+		61 [label="" fillcolor=white]
+		61 -> 61 [style=invis]
+		61 -> 61 [style=invis]
+		59 [label="" fillcolor=green]
+		59 -> 59 [style=invis]
+		58 [label="" fillcolor=green]
+		58 -> 58 [style=invis]
+		58 -> 58 [style=invis]
+		57 [label="" fillcolor=green]
+		57 -> 57 [style=invis]
+		57 -> 57 [style=invis]
+		56 [label="" fillcolor=green]
+		56 -> 56 [style=invis]
+		56 -> 56 [style=invis]
+		55 [label="" fillcolor=green]
+		55 -> 55 [style=invis]
+		55 -> 55 [style=invis]
+		54 [label="" fillcolor=green]
+		54 -> 54 [style=invis]
+		54 -> 54 [style=invis]
+		53 [label="" fillcolor=black fontcolor=white]
+		53 -> 53 [style=invis]
+		53 -> 53 [style=invis]
+		52 [label="" fillcolor=black fontcolor=white]
+		52 -> 52 [style=invis]
+		52 -> 52 [style=invis]
+		51 [label="" fillcolor=black fontcolor=white]
+		51 -> 51 [style=invis]
+		51 -> 51 [style=invis]
+		49 [label="" fillcolor=black fontcolor=white]
+		49 -> 49 [style=invis]
+		48 [label="" fillcolor=black fontcolor=white]
+		48 -> 48 [style=invis]
+		48 -> 48 [style=invis]
+		47 [label="" fillcolor=green]
+		47 -> 47 [style=invis]
+		47 -> 47 [style=invis]
+		46 [label="" fillcolor=green]
+		46 -> 46 [style=invis]
+		46 -> 46 [style=invis]
+		45 [label="" fillcolor=black fontcolor=white]
+		45 -> 45 [style=invis]
+		45 -> 45 [style=invis]
+		44 [label=" A " fillcolor=green]
+		44 -> 44 [style=invis]
+		44 -> 44 [style=invis]
+		43 [label="" fillcolor=black fontcolor=white]
+		43 -> 43 [style=invis]
+		43 -> 43 [style=invis]
+		42 [label="" fillcolor=black fontcolor=white]
+		42 -> 42 [style=invis]
+		42 -> 42 [style=invis]
+		41 [label="" fillcolor=black fontcolor=white]
+		41 -> 41 [style=invis]
+		41 -> 41 [style=invis]
+		39 [label="" fillcolor=black fontcolor=white]
+		39 -> 39 [style=invis]
+		38 [label="" fillcolor=black fontcolor=white]
+		38 -> 38 [style=invis]
+		38 -> 38 [style=invis]
+		37 [label="" fillcolor=green]
+		37 -> 37 [style=invis]
+		37 -> 37 [style=invis]
+		36 [label="" fillcolor=green]
+		36 -> 36 [style=invis]
+		36 -> 36 [style=invis]
+		35 [label="" fillcolor=green]
+		35 -> 35 [style=invis]
+		35 -> 35 [style=invis]
+		34 [label="" fillcolor=green]
+		34 -> 34 [style=invis]
+		34 -> 34 [style=invis]
+		33 [label="" fillcolor=green]
+		33 -> 33 [style=invis]
+		33 -> 33 [style=invis]
+		32 [label="" fillcolor=green]
+		32 -> 32 [style=invis]
+		32 -> 32 [style=invis]
+		31 [label="" fillcolor=white]
+		31 -> 31 [style=invis]
+		31 -> 31 [style=invis]
+		29 [label="" fillcolor=black fontcolor=white]
+		29 -> 29 [style=invis]
+		28 [label="" fillcolor=black fontcolor=white]
+		28 -> 28 [style=invis]
+		28 -> 28 [style=invis]
+		27 [label=" C " fillcolor=green]
+		27 -> 27 [style=invis]
+		27 -> 27 [style=invis]
+		26 [label="" fillcolor=green]
+		26 -> 26 [style=invis]
+		26 -> 26 [style=invis]
+		25 [label="" fillcolor=green]
+		25 -> 25 [style=invis]
+		25 -> 25 [style=invis]
+		24 [label="" fillcolor=black fontcolor=white]
+		24 -> 24 [style=invis]
+		24 -> 24 [style=invis]
+		23 [label="" fillcolor=black fontcolor=white]
+		23 -> 23 [style=invis]
+		23 -> 23 [style=invis]
+		22 [label=X fillcolor=green]
+		22 -> 22 [style=invis]
+		22 -> 22 [style=invis]
+		21 [label="" fillcolor=black fontcolor=white]
+		21 -> 21 [style=invis]
+		21 -> 21 [style=invis]
+		19 [label="" fillcolor=black fontcolor=white]
+		19 -> 19 [style=invis]
+		18 [label="" fillcolor=black fontcolor=white]
+		18 -> 18 [style=invis]
+		18 -> 18 [style=invis]
+		17 [label="" fillcolor=black fontcolor=white]
+		17 -> 17 [style=invis]
+		17 -> 17 [style=invis]
+		16 [label="" fillcolor=black fontcolor=white]
+		16 -> 16 [style=invis]
+		16 -> 16 [style=invis]
+		15 [label="" fillcolor=black fontcolor=white]
+		15 -> 15 [style=invis]
+		15 -> 15 [style=invis]
+		14 [label="" fillcolor=black fontcolor=white]
+		14 -> 14 [style=invis]
+		14 -> 14 [style=invis]
+		13 [label="" fillcolor=black fontcolor=white]
+		13 -> 13 [style=invis]
+		13 -> 13 [style=invis]
+		12 [label="" fillcolor=black fontcolor=white]
+		12 -> 12 [style=invis]
+		12 -> 12 [style=invis]
+		11 [label="" fillcolor=black fontcolor=white]
+		11 -> 11 [style=invis]
+		11 -> 11 [style=invis]
+	}
+	11 -> 12
+	12 -> 13
+	13 -> 14
+	14 -> 15
+	15 -> 16
+	16 -> 17
+	17 -> 18
+	18 -> 19
+	21 -> 22
+	22 -> 23
+	23 -> 24
+	24 -> 25
+	25 -> 26
+	26 -> 27
+	27 -> 28
+	28 -> 29
+	31 -> 32
+	32 -> 33
+	33 -> 34
+	34 -> 35
+	35 -> 36
+	36 -> 37
+	37 -> 38
+	38 -> 39
+	41 -> 42
+	42 -> 43
+	43 -> 44
+	44 -> 45
+	45 -> 46
+	46 -> 47
+	47 -> 48
+	48 -> 49
+	51 -> 52
+	52 -> 53
+	53 -> 54
+	54 -> 55
+	55 -> 56
+	56 -> 57
+	57 -> 58
+	58 -> 59
+	61 -> 62
+	62 -> 63
+	63 -> 64
+	64 -> 65
+	65 -> 66
+	66 -> 67
+	67 -> 68
+	68 -> 69
+	71 -> 72
+	72 -> 73
+	73 -> 74
+	74 -> 75
+	75 -> 76
+	76 -> 77
+	77 -> 78
+	78 -> 79
+	81 -> 82
+	82 -> 83
+	83 -> 84
+	84 -> 85
+	85 -> 86
+	86 -> 87
+	87 -> 88
+	88 -> 89
+	91 -> 92
+	92 -> 93
+	93 -> 94
+	94 -> 95
+	95 -> 96
+	96 -> 97
+	97 -> 98
+	98 -> 99
+	101 -> 102
+	102 -> 103
+	103 -> 104
+	104 -> 105
+	105 -> 106
+	106 -> 107
+	107 -> 108
+	108 -> 109
+}

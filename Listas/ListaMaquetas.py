@@ -5,6 +5,9 @@ from Clases.ClasePosicion import ClasePosicion
 from Listas.ListaPosiciones import ListaPosiciones
 from Listas.ListaResultados import ListaResultado
 from Nodos.NodoResultado import NodoResultado
+
+from graphviz import Digraph
+
 class ListaMaquetas:
 
     def __init__(self):
@@ -73,11 +76,11 @@ class ListaMaquetas:
         tmpObjetivos = objetivos
         while tmpObjetivos:
             if int(tmpObjetivos.valor.filaObjetivo) == int(posY) and int(tmpObjetivos.valor.columnaObjetivo) == int(posX):
-                return True
+                return tmpObjetivos.valor.nombreObjetivo
             
             tmpObjetivos = tmpObjetivos.siguiente
         
-        return False
+        return ""
 
     
     def validaPosicion(self, sigMovimiento, antMovimiento, Estructura, posX, posY, listaPosiciones, valFila, valColumna, contadorObjetivos, objetivosAlcanzados, objetivos):
@@ -102,7 +105,7 @@ class ListaMaquetas:
             if self.existePosicion(listaPosiciones, clasePosicion):
                 return False
             
-            if self.esObjetivo(movimientoX, movimientoY, objetivos):
+            if self.esObjetivo(movimientoX, movimientoY, objetivos) != "":
                 objetivosAlcanzados += 1
 
             nodoPosicion = NodoPosicion(clasePosicion)
@@ -123,7 +126,7 @@ class ListaMaquetas:
             if self.existePosicion(listaPosiciones, clasePosicion):
                 return False
             
-            if self.esObjetivo(movimientoX, movimientoY, objetivos):
+            if self.esObjetivo(movimientoX, movimientoY, objetivos) != "":
                 objetivosAlcanzados += 1
             
             nodoPosicion = NodoPosicion(clasePosicion)
@@ -153,7 +156,7 @@ class ListaMaquetas:
             if self.existePosicion(listaPosiciones, clasePosicion):
                 return False
             
-            if self.esObjetivo(movimientoX, movimientoY, objetivos):
+            if self.esObjetivo(movimientoX, movimientoY, objetivos) != "":
                 objetivosAlcanzados += 1
             
             nodoPosicion = NodoPosicion(clasePosicion)
@@ -183,7 +186,7 @@ class ListaMaquetas:
             if self.existePosicion(listaPosiciones, clasePosicion):
                 return False
             
-            if self.esObjetivo(movimientoX, movimientoY, objetivos):
+            if self.esObjetivo(movimientoX, movimientoY, objetivos) != "":
                 objetivosAlcanzados += 1
 
             nodoPosicion = NodoPosicion(clasePosicion)
@@ -272,3 +275,79 @@ class ListaMaquetas:
         self.buscarPosiciones(tmpEstructura, j, i, listaPosiciones, valFila, valColumna, contadorObjetivos, objetivosAlcanzados, maqueta.valor.objetivosMaqueta.cabeza)
         if listaPosiciones.cabeza == None:
             messagebox.showerror("Error", "Maqueta no tiene solución")
+
+        self.imprimirMaqueta(maqueta.valor.nombreMaqueta, listaPosiciones)
+
+    def imprimirMaqueta(self, nombre, listaPosiciones):
+        tmpMaqueta = self.cabeza
+        while tmpMaqueta:
+            if str(tmpMaqueta.valor.nombreMaqueta) == nombre:
+                break
+
+            tmpMaqueta = tmpMaqueta.siguiente
+
+        if tmpMaqueta is None:
+            messagebox.showerror("Error", "No existe maqueta seleccionada")
+            return False
+        
+        if listaPosiciones is None:
+            listaPosiciones = ListaPosiciones()
+        
+        dot = Digraph('G')
+        dot.attr(rankdir='LR')
+        dot.attr('node', shape='box', style='filled')
+
+        filas = int(tmpMaqueta.valor.filaMaqueta)
+        columnas = int(tmpMaqueta.valor.columnaMaqueta)
+
+        tmpEstructura = tmpMaqueta.valor.estructuraMaqueta.cola
+
+        with dot.subgraph(name='matriz_laberinto') as c:
+
+            for i in range(filas):
+                for j in range(columnas):
+
+                    idNodo = node_id = f'{str(filas - i) + str(columnas - j)}'
+                    
+                    if tmpEstructura is None:
+                        break
+
+                    if str(tmpEstructura.valor) == "*":
+                        c.node(f'{idNodo}', label="", fillcolor='black', fontcolor='white')
+                    else:
+                        colorCamino = 'white'
+                        if self.existePosicion(listaPosiciones, ClasePosicion(filas - i - 1, columnas - j - 1)):
+                            colorCamino = 'green'
+                        
+                        nombreLbl = self.esObjetivo(columnas - j - 1, filas - i - 1, tmpMaqueta.valor.objetivosMaqueta.cabeza)
+                        if int(tmpMaqueta.valor.entradaMaqueta.filaEntrada) == int(filas - i - 1) and int(tmpMaqueta.valor.entradaMaqueta.columnaEntrada) == int(columnas - j - 1):
+                            nombreLbl = "X"
+                            colorCamino = 'green'
+                        
+                        c.node(f'{idNodo}', fillcolor=colorCamino, label=f"{nombreLbl}")
+                    
+                    if j > 0:
+                        c.edge(f'{idNodo}', f'{idNodo}', style='invis')
+                    if i > 0:
+                        c.edge(f'{idNodo}', f'{idNodo}', style='invis')
+                    
+                    tmpEstructura = tmpEstructura.anterior
+
+        tmpEstructura = tmpMaqueta.valor.estructuraMaqueta.cabeza
+
+        for i in range(filas):
+            tmpFilaA = ''
+            tmpFilaB = ''
+            tmpEdgeNode = []
+            for j in range(columnas):
+                tmpFilaB = tmpFilaA
+                tmpFilaA = f'{str(i + 1) + str(j + 1)}'
+                if(tmpFilaB != ''):
+                    tmpEdgeNode.append((f'{tmpFilaB}', f'{tmpFilaA}'))
+
+            dot.edges(tmpEdgeNode)
+            dot.edge_attr.update(style='invis')
+
+        dot.render(f'Maqueta_{tmpMaqueta.valor.nombreMaqueta}.gv', view=True)
+
+

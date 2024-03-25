@@ -94,6 +94,10 @@ def seleccionMaqueta(listaMaqueta):
 
     listbox.pack()
 
+    boton_imprimir = tk.Button(window, text="Imprimir", command= lambda: listaMaqueta.imprimirMaqueta(listbox.get(listbox.curselection()), None))
+    boton_imprimir.pack()
+
+
     boton_resolver = tk.Button(window, text="Resolver laberinto", command= lambda: listaMaqueta.resolverMaqueta(listbox.get(listbox.curselection())))
     boton_resolver.pack()
 
