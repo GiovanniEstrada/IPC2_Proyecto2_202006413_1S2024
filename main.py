@@ -79,10 +79,30 @@ def lectorXML(listaMaquetas):
     listaMaquetas.imprimirMaquetas()
 
 
+def seleccionMaqueta(listaMaqueta):
+    window = tk.Tk()
+    window.geometry("500x400")
+    window.title("Selección de maquetas")
+
+    listbox = tk.Listbox(window)
+    tmpListaMaquetas = listaMaqueta.cabeza
+    i = 0
+    while tmpListaMaquetas:
+        listbox.insert(i, f"{tmpListaMaquetas.valor.nombreMaqueta}")
+        i += 1
+        tmpListaMaquetas = tmpListaMaquetas.siguiente
+
+    listbox.pack()
+
+    boton_resolver = tk.Button(window, text="Resolver laberinto", command= lambda: listaMaqueta.resolverMaqueta(listbox.get(listbox.curselection())))
+    boton_resolver.pack()
+
+    window.mainloop()  
+
+
 
 def main():
 
-    print("HOLA MUNDO")
     listaMaquetas = ListaMaquetas()
     root = tk.Tk()
     root.geometry("500x400")
@@ -91,7 +111,7 @@ def main():
     btnCargaArchivo = tk.Button(root, text="Cargar Archivo", width=40, height=5, command = lambda: lectorXML(listaMaquetas))
     btnCargaArchivo.pack(pady=10)
 
-    btnSeleccionMaqueta = tk.Button(root, text="Seleccionar Maqueta", width=40, height=5, command = lambda: print("DUMMY"))
+    btnSeleccionMaqueta = tk.Button(root, text="Seleccionar Maqueta", width=40, height=5, command = lambda: seleccionMaqueta(listaMaquetas))
     btnSeleccionMaqueta.pack(pady=15)
 
     btnAyuda = tk.Button(root, text="Ayuda", width=40, height=5, command = lambda: print("DUMMY"))
