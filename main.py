@@ -4,6 +4,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 import tkinter as tk
 from tkinter import ttk
+import os
 
 # Importación de listas
 from Listas.ListaEntradas   import ListaEntradas
@@ -103,6 +104,29 @@ def seleccionMaqueta(listaMaqueta):
 
     window.mainloop()  
 
+def abrirDocumentación():
+    os.system("start ./Documentacion/Documentacion_Proyecto2.pdf")
+
+def ventanaAyuda():
+    ayuda = tk.Tk()
+    ayuda.geometry("500x100")
+    ayuda.title("Selección de maquetas")
+    
+    nombre = tk.Label(ayuda, text="Nombre: Cristian Giovanni Estrada Ramirez")
+    nombre.pack()
+
+    correo = tk.Label(ayuda, text="Correo: 2991897830101@ingenieria.usac.edu.gt")
+    correo.pack()
+    
+    carnet = tk.Label(ayuda, text="Carnet: 202006413")
+    carnet.pack()
+
+    boton_resolver = tk.Button(ayuda, text="Documentación", command= lambda: abrirDocumentación())
+    boton_resolver.pack()
+
+    ayuda.mainloop()  
+
+
 
 
 def main():
@@ -118,7 +142,7 @@ def main():
     btnSeleccionMaqueta = tk.Button(root, text="Seleccionar Maqueta", width=40, height=5, command = lambda: seleccionMaqueta(listaMaquetas))
     btnSeleccionMaqueta.pack(pady=15)
 
-    btnAyuda = tk.Button(root, text="Ayuda", width=40, height=5, command = lambda: print("DUMMY"))
+    btnAyuda = tk.Button(root, text="Ayuda", width=40, height=5, command = lambda: ventanaAyuda())
     btnAyuda.pack(pady=15)
     root.mainloop()
 
